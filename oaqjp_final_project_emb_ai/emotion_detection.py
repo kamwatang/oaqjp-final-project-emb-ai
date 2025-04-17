@@ -12,6 +12,7 @@ def emotion_detector(text_to_analyze):
 
     response = requests.post(URL, json=input_data, headers=headers)
     formatted_response = response.json() # You can also use json.loads(response.text)
+    print("DEBUG: formatted_response = ", formatted_response)
     predictions = formatted_response['emotionPredictions'][0]['emotion']
     dominantEmotion = max(predictions, key=predictions.get)
     predictions['dominant_emotion'] = dominantEmotion

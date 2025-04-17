@@ -5,15 +5,15 @@ app = Flask("Emotion Detector")
 
 @app.route("/emotionDetector")
 def predict():
-    text = requests.get('text_to_analyze')
+    text = request.args.get('textToAnalyze')
     response = emotion_detector(text)
     return (f"For the given statement, the system response is 'anger': {response['anger']}, 'disgust': {response['disgust']}, 'fear': {response['fear']}, 'joy': {response['joy']} and 'sadness': {response['sadness']}. This dominant emotion is {response['dominant_emotion']} ")
 
 @app.route("/")
 def home():
-    return render_template("index.htnl")
+    return render_template("index.html")
 
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000)
+    app.run(host="0.0.0.0", port=5002, debug=True)
