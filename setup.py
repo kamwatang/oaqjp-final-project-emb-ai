@@ -1,16 +1,21 @@
-from setuptools import setup, find_packages
+# setup.py
 
-setup(
-    name='EmotionDetection',
-    version='0.1',
-    packages=find_packages(),
+import setuptools
+
+with open("README.md", "r", encoding="utf-8") as fh:
+    long_description = fh.read()
+
+setuptools.setup(
+    name="oaqjp_final_project_emb_ai",          # PyPI package name
+    version="0.1.0",                            # Package version
+    url="https://github.com/kamwatang/oaqjp-final-project-emb-ai",
+    packages=setuptools.find_packages(),        # Automatically finds "oaqjp_final_project_emb_ai"
     install_requires=[
-       'requests>=2.25.1',
-        'json>=3.13'
+        "requests"
     ],
-    entry_points={
-        'console_scripts': [
-            'import emotion_detection'
-        ],
-    },
+    python_requires=">=3.7",                    # Minimum Python version required
+    classifiers=[
+        "Programming Language :: Python :: 3",
+        "License :: OSI Approved :: MIT License",
+    ],
 )

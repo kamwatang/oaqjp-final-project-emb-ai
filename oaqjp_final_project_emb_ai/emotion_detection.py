@@ -17,3 +17,5 @@ def emotion_detector(text_to_analyze):
     predictions['dominant_emotion'] = dominantEmotion
 
     return predictions
+
+    
